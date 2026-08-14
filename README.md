@@ -2,7 +2,7 @@
 
 Practical AI Skills designed to support **Technical Program Management workflows** using Claude.
 
-This repository demonstrates how AI can be applied to common TPM activities such as **program health assessment, risk analysis, dependency management, and decision support**.
+This repository demonstrates how AI can be applied to common TPM activities such as **program health assessment, technical change impact analysis, dependency management, and decision support**.
 
 ---
 
@@ -40,18 +40,27 @@ The Skill is designed to distinguish between **confirmed facts, reasonable infer
 
 **[View Project Status Analyzer →](skills/project-status-analyzer/)**
 
-### Evaluation
-
-The Project Status Analyzer includes a structured evaluation suite covering:
-
-* Green / healthy scenarios
-* Amber / schedule-risk scenarios
-* Red / critical-blocker scenarios
-* Missing-information scenarios
-* MVP acceptance criteria
-* Known limitations
-
 **[View Evaluation →](skills/project-status-analyzer/evaluation/test-cases.md)**
+
+### 2. Technical Change Impact Analyzer — In Progress 🔄
+
+Analyzes a proposed technical or product change across:
+
+* 🏗️ Systems & Architecture
+* 🔌 Integrations & Interfaces
+* 👥 Teams & Ownership
+* 🗄️ Data & Data Flows
+* 🔐 Security & Compliance
+* 🧪 Testing & Validation
+* 🔗 Dependencies & Sequencing
+* 📅 Schedule & Delivery
+* ⚠️ Risks & Mitigations
+* ❓ Unknowns & Validation Questions
+* ⚖️ Decisions & Leadership Attention
+
+The Skill is designed to distinguish **confirmed impact, likely impact, and unknown impact** rather than presenting assumptions as facts.
+
+**[View Technical Change Impact Analyzer →](skills/technical-change-impact/)**
 
 ---
 
@@ -81,58 +90,41 @@ The goal is to demonstrate **AI development and evaluation**, not simply prompt 
 
 ---
 
-## 🔍 Example Capability
-
-A typical project update such as:
-
-> "Development is 80% complete, go-live is in 4 weeks, security review has a 2-week lead time, and a vendor API issue is unresolved."
-
-can be transformed into structured TPM analysis covering:
-
-**Health → Schedule → Risks → Blockers → Dependencies → Unknowns → Actions → Leadership Attention**
-
-while explicitly identifying information that is not known.
-
----
-
 ## 📊 What This Demonstrates
 
 This portfolio focuses on practical AI TPM capabilities including:
 
-| Area                             | Demonstrated Capability                        |
-| -------------------------------- | ---------------------------------------------- |
-| AI Skills                        | Reusable AI workflow design                    |
-| Prompt / Instruction Engineering | Structured behavioral instructions             |
-| AI Evaluation                    | Scenario-based testing and acceptance criteria |
-| Risk Management                  | Evidence-based risk analysis                   |
-| Program Management               | Health, schedule and dependency analysis       |
-| Decision Support                 | Action and leadership decision identification  |
-| AI Reliability                   | Uncertainty and hallucination controls         |
-| Iterative Development            | Test → evaluate → improve                      |
+| Area | Demonstrated Capability |
+|---|---|
+| AI Skills | Reusable AI workflow design |
+| Instruction Engineering | Structured behavioral instructions |
+| AI Evaluation | Scenario-based testing and acceptance criteria |
+| Program Management | Health, schedule, risk and dependency analysis |
+| Technical TPM | Change impact and cross-system analysis |
+| Decision Support | Actions, trade-offs and leadership decisions |
+| AI Reliability | Uncertainty and hallucination controls |
+| Iterative Development | Test → evaluate → improve |
 
 ---
 
 ## 🚧 Roadmap
 
-This repository will evolve into a broader **AI TPM toolkit**.
+The portfolio intentionally focuses on **a small number of high-value TPM capabilities rather than a large collection of shallow Skills**.
 
-Planned capabilities include:
+* [x] Project Status Analyzer
+* [ ] Technical Change Impact Analyzer
+* [ ] Dependency & Critical Path Intelligence
+* [ ] Decision Intelligence & Executive Briefing
+* [ ] AI TPM Evaluation Framework
+* [ ] End-to-End Enterprise Case Study
 
-* [x] Risk Analyzer
-* [ ] Dependency Analyzer
-* [ ] RAID Analysis
-* [ ] Executive Status Report Generator
-* [ ] AI evaluation and benchmarking
-* [ ] Automated Skill packaging
-* [ ] AI-powered Program Intelligence prototype
-
-The roadmap is intentionally incremental, with each capability tested and documented before being considered complete.
+Each capability will be tested and documented before being considered complete.
 
 ---
 
 ## 👤 About
 
-Built as a practical **AI + Technical Program Management portfolio** to explore how AI can augment program management workflows and improve decision support.
+Built as a practical **AI + Technical Program Management portfolio** to explore how AI can augment program management workflows and improve engineering decision support.
 
 The examples use synthetic project scenarios and do not contain proprietary company information.
 
@@ -140,6 +132,5 @@ The examples use synthetic project scenarios and do not contain proprietary comp
 
 ## 📌 Status
 
-**Current milestone:** Project Status Analyzer — **MVP Complete**
-
-More AI TPM capabilities will be added incrementally.
+**Current milestone:** Project Status Analyzer — **MVP Complete**  
+**Next milestone:** Technical Change Impact Analyzer — **In Progress**
