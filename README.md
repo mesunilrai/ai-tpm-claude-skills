@@ -1,136 +1,209 @@
 # AI TPM Claude Skills
 
-Practical AI Skills designed to support **Technical Program Management workflows** using Claude.
+Practical AI Skills for **Technical Program Management, engineering delivery, and leadership decision support** using Claude.
 
-This repository demonstrates how AI can be applied to common TPM activities such as **program health assessment, technical change impact analysis, dependency management, and decision support**.
+This portfolio explores how AI can augment TPM workflows beyond summarization—by analyzing program health, technical change impact, dependency chains, and delivery decisions while explicitly handling uncertainty.
 
----
+## 🎯 What This Portfolio Demonstrates
 
-## 🎯 Objective
+The goal is to build a **small set of high-value, reusable AI TPM capabilities**, not a collection of shallow prompts.
 
-Explore and build reusable AI Skills that help Technical Program Managers convert unstructured project information into **structured, evidence-based insights and actionable decisions**.
+Each capability is designed around a repeatable TPM workflow and evaluated for:
 
-The focus is not only on generating AI output, but also on:
+- Evidence adherence
+- Reasoning quality
+- Uncertainty handling
+- Hallucination control
+- Actionability
+- Decision usefulness
 
-* Clear AI instruction design
-* Evidence-based reasoning
-* Handling uncertainty and missing information
-* AI evaluation and test cases
-* Iterative improvement
-* Practical TPM use cases
+## 🧩 Core Skills
 
----
+### 1. Project Status Analyzer — MVP Complete ✅
 
-## 🧩 Skills
+**Question:** *What is happening with the program, and where should the TPM focus?*
 
-### 1. Project Status Analyzer — MVP ✅
+Analyzes unstructured program updates across:
 
-Analyzes unstructured project or program updates and produces:
+- 🟢🟠🔴 Program health and assessment confidence
+- 📅 Schedule and critical-path concerns
+- ⚠️ Risks and prioritization
+- 🚧 Blockers vs. issues
+- 🔗 Dependencies
+- ❓ Unknowns and assumptions
+- 🎯 Recommended actions
+- 👔 Leadership attention
 
-* 🟢🟠🔴 Program Health
-* 📅 Schedule & Critical Path Analysis
-* ⚠️ Risk Identification & Prioritization
-* 🚧 Blockers & Issues
-* 🔗 Dependency Analysis
-* ❓ Unknowns & Assumptions
-* 🎯 Recommended Next Actions
-* 👔 Leadership Attention
+The Skill explicitly distinguishes **confirmed facts, inferences, and unknowns**.
 
-The Skill is designed to distinguish between **confirmed facts, reasonable inferences, and unknown information** rather than presenting assumptions as facts.
+**[View Skill →](skills/project-status-analyzer/)** · **[View evaluation →](skills/project-status-analyzer/evaluation/test-cases.md)**
 
-**[View Project Status Analyzer →](skills/project-status-analyzer/)**
+### 2. Technical Change Impact Analyzer — Built; Validation in Progress 🔄
 
-**[View Evaluation →](skills/project-status-analyzer/evaluation/test-cases.md)**
+**Question:** *If we make this change, what else could be affected?*
 
-### 2. Technical Change Impact Analyzer — In Progress 🔄
+Analyzes proposed technical/product changes across:
 
-Analyzes a proposed technical or product change across:
+- 🏗️ Systems and architecture
+- 🔌 Integrations and interfaces
+- 👥 Teams and ownership
+- 🗄️ Data and data flows
+- 🔐 Security and compliance
+- 🧪 Testing and validation
+- 🔗 Dependencies and sequencing
+- 📅 Schedule and delivery
+- ⚠️ Risks and mitigations
+- ❓ Unknowns and validation questions
+- ⚖️ Decisions and leadership attention
 
-* 🏗️ Systems & Architecture
-* 🔌 Integrations & Interfaces
-* 👥 Teams & Ownership
-* 🗄️ Data & Data Flows
-* 🔐 Security & Compliance
-* 🧪 Testing & Validation
-* 🔗 Dependencies & Sequencing
-* 📅 Schedule & Delivery
-* ⚠️ Risks & Mitigations
-* ❓ Unknowns & Validation Questions
-* ⚖️ Decisions & Leadership Attention
+**[View Skill →](skills/technical-change-impact/)**
 
-The Skill is designed to distinguish **confirmed impact, likely impact, and unknown impact** rather than presenting assumptions as facts.
+### 3. Dependency & Critical Path Intelligence — Built; Validation in Progress 🔄
 
-**[View Technical Change Impact Analyzer →](skills/technical-change-impact/)**
+**Question:** *What depends on what, where can failure propagate, and which dependencies may be critical?*
 
----
+Analyzes:
 
-## 🧠 Development Approach
+- Upstream/downstream relationships
+- Dependency chains
+- Sequencing
+- Critical-path candidates
+- Cross-team and vendor dependencies
+- Ownership gaps
+- Date sensitivity
+- Risk propagation
+- Dependency validation actions
 
-The Skills are developed iteratively:
+The Skill deliberately uses **critical-path candidate** when evidence is suggestive rather than claiming a confirmed critical path without sufficient evidence.
+
+**[View Skill →](skills/dependency-critical-path-intelligence/)**
+
+### 4. Decision Intelligence & Executive Briefing — Built; Validation in Progress 🔄
+
+**Question:** *What decision is needed, what are the trade-offs, and how should leadership see it?*
+
+Structures:
+
+- Decision context
+- Evidence
+- Options
+- Trade-offs
+- Recommendations
+- Unknowns
+- Decision ownership and timing
+- Leadership attention
+- Audience-specific executive / engineering / TPM briefings
+
+The underlying facts are preserved when the audience changes.
+
+**[View Skill →](skills/decision-intelligence-executive-briefing/)**
+
+## 🧠 Portfolio Architecture
+
+```text
+                 Unstructured Program Information
+                              │
+          ┌───────────────────┼───────────────────┐
+          ↓                   ↓                   ↓
+   Program Status        Change Impact       Dependency /
+     Analysis             Analysis         Critical Path
+          └───────────────────┼───────────────────┘
+                              ↓
+                 Decision Intelligence
+                              ↓
+                    Executive Briefing
+                              │
+                              ↓
+                    Leadership Decision
+```
+
+The four Skills are intentionally complementary rather than four variations of the same prompt.
+
+## 🧪 Evaluation Approach
+
+The portfolio treats **evaluation as part of AI development**.
 
 ```text
 Define TPM Problem
-       ↓
-Design AI Skill
-       ↓
-Test with Realistic Scenarios
-       ↓
+        ↓
+Design Skill
+        ↓
+Baseline Test
+        ↓
 Evaluate Output
-       ↓
-Identify Reasoning Gaps
-       ↓
+        ↓
+Identify Failure Mode
+        ↓
 Improve Instructions
-       ↓
+        ↓
 Retest
-       ↓
-Document Results
+        ↓
+Document Result
 ```
 
-The goal is to demonstrate **AI development and evaluation**, not simply prompt creation.
+Evaluation dimensions include:
 
----
-
-## 📊 What This Demonstrates
-
-This portfolio focuses on practical AI TPM capabilities including:
-
-| Area | Demonstrated Capability |
+| Dimension | What is evaluated |
 |---|---|
-| AI Skills | Reusable AI workflow design |
-| Instruction Engineering | Structured behavioral instructions |
-| AI Evaluation | Scenario-based testing and acceptance criteria |
-| Program Management | Health, schedule, risk and dependency analysis |
-| Technical TPM | Change impact and cross-system analysis |
-| Decision Support | Actions, trade-offs and leadership decisions |
-| AI Reliability | Uncertainty and hallucination controls |
-| Iterative Development | Test → evaluate → improve |
+| Accuracy | Correct understanding of supplied information |
+| Evidence adherence | Conclusions remain grounded in input |
+| Hallucination control | No invented facts, owners, dates, dependencies or requirements |
+| Completeness | Material impacts, risks and unknowns are identified |
+| Reasoning quality | Conclusions are defensible from evidence |
+| Uncertainty | Important unknowns remain visible |
+| Actionability | Recommendations are usable by TPMs |
+| Decision quality | Options and trade-offs are structured appropriately |
+| Audience fit | Communication matches the intended audience |
 
----
+**[View evaluation framework →](evaluation/framework.md)**
 
-## 🚧 Roadmap
+## 🏢 End-to-End Case Study
 
-The portfolio intentionally focuses on **a small number of high-value TPM capabilities rather than a large collection of shallow Skills**.
+A synthetic **Enterprise Identity Modernization** program is used to evaluate the four Skills together.
 
-* [x] Project Status Analyzer
-* [ ] Technical Change Impact Analyzer
-* [ ] Dependency & Critical Path Intelligence
-* [ ] Decision Intelligence & Executive Briefing
-* [ ] AI TPM Evaluation Framework
-* [ ] End-to-End Enterprise Case Study
+The scenario includes:
 
-Each capability will be tested and documented before being considered complete.
+- 10 applications in scope
+- Identity modernization / OpenID Connect migration
+- Remaining legacy authentication integration work
+- External vendor dependency
+- Security review
+- End-to-end testing
+- 8-week launch constraint
+- Cross-team dependencies
+- Material unknowns and leadership trade-offs
 
----
+The case study is intentionally synthetic and contains no proprietary company information.
+
+**[View program context →](case-study/program-context.md)** · **[View sample update →](case-study/sample-input.md)** · **[View end-to-end evaluation →](case-study/end-to-end-analysis.md)**
+
+## 📌 Current Status
+
+**Portfolio V1 structure:** Complete  
+**Skills:** 4 core capabilities built  
+**Validation:** In progress; consolidated testing will be performed against the shared case study  
+**Next:** Refine only where testing identifies a meaningful weakness
+
+## 🚧 Why Only Four Skills?
+
+The portfolio intentionally prioritizes **depth over quantity**.
+
+The target is to demonstrate that AI can support the TPM lifecycle from:
+
+> **Understand → Assess → Analyze Change → Trace Dependencies → Decide → Communicate**
+
+Additional Skills will only be added if they provide materially different TPM value.
 
 ## 👤 About
 
-Built as a practical **AI + Technical Program Management portfolio** to explore how AI can augment program management workflows and improve engineering decision support.
+Built as a practical **AI + Technical Program Management portfolio** exploring how AI can augment program management workflows and engineering decision support.
 
 The examples use synthetic project scenarios and do not contain proprietary company information.
 
----
+## 📚 Skill Authoring Reference
 
-## 📌 Status
+The Skills follow Anthropic's current custom Skill guidance: focused workflows, required `name` and `description` metadata, explicit usage guidance, examples, guardrails, and incremental testing. See the [Anthropic Skill authoring guide](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills) for the platform reference.
 
-**Current milestone:** Project Status Analyzer — **MVP Complete**  
-**Next milestone:** Technical Change Impact Analyzer — **In Progress**
+## License
+
+Released under the MIT License. See [LICENSE](LICENSE).
