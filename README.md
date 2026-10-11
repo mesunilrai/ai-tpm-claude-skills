@@ -4,22 +4,20 @@ Practical AI Skills for **Technical Program Management, engineering delivery, an
 
 This portfolio explores how AI can augment TPM workflows beyond summarization—by analyzing program health, technical change impact, dependency chains, and delivery decisions while explicitly handling uncertainty.
 
-## 🎯 What This Portfolio Demonstrates
+> **Portfolio focus:** reusable TPM workflows, evidence-grounded reasoning, and systematic evaluation—not a collection of shallow prompts.
 
-The goal is to build a **small set of high-value, reusable AI TPM capabilities**, not a collection of shallow prompts.
+## What This Portfolio Demonstrates
 
 Each capability is designed around a repeatable TPM workflow and evaluated for:
 
-- Evidence adherence
-- Reasoning quality
-- Uncertainty handling
-- Hallucination control
-- Actionability
-- Decision usefulness
+- Evidence adherence and reasoning quality
+- Uncertainty handling and hallucination control
+- Completeness and actionability
+- Decision usefulness and audience fit
 
-## 🧩 Core Skills
+## Core Skills
 
-### 1. Project Status Analyzer — MVP Complete ✅
+### 1. Project Status Analyzer — MVP Complete; consolidated validation pending
 
 **Question:** *What is happening with the program, and where should the TPM focus?*
 
@@ -34,71 +32,65 @@ Analyzes unstructured program updates across:
 - 🎯 Recommended actions
 - 👔 Leadership attention
 
-The Skill explicitly distinguishes **confirmed facts, inferences, and unknowns**.
+The Skill distinguishes **confirmed facts, inferences, and unknowns**.
 
-**[View Skill →](skills/project-status-analyzer/)** · **[View evaluation →](skills/project-status-analyzer/evaluation/test-cases.md)**
+**[View Skill →](skills/project-status-analyzer/)** · **[View evaluation test cases →](skills/project-status-analyzer/evaluation/test-cases.md)**
 
-### 2. Technical Change Impact Analyzer — Built; Validation in Progress 🔄
+### 2. Technical Change Impact Analyzer — Built; validation pending
 
 **Question:** *If we make this change, what else could be affected?*
 
-Analyzes proposed technical/product changes across:
-
-- 🏗️ Systems and architecture
-- 🔌 Integrations and interfaces
-- 👥 Teams and ownership
-- 🗄️ Data and data flows
-- 🔐 Security and compliance
-- 🧪 Testing and validation
-- 🔗 Dependencies and sequencing
-- 📅 Schedule and delivery
-- ⚠️ Risks and mitigations
-- ❓ Unknowns and validation questions
-- ⚖️ Decisions and leadership attention
+Analyzes proposed technical/product changes across systems, architecture, integrations, teams, data flows, security, testing, dependencies, schedule, risks, and decisions.
 
 **[View Skill →](skills/technical-change-impact/)**
 
-### 3. Dependency & Critical Path Intelligence — Built; Validation in Progress 🔄
+### 3. Dependency & Critical Path Intelligence — Built; validation pending
 
 **Question:** *What depends on what, where can failure propagate, and which dependencies may be critical?*
 
-Analyzes:
+Analyzes upstream/downstream relationships, dependency chains, sequencing, critical-path candidates, cross-team and vendor dependencies, ownership gaps, date sensitivity, and risk propagation.
 
-- Upstream/downstream relationships
-- Dependency chains
-- Sequencing
-- Critical-path candidates
-- Cross-team and vendor dependencies
-- Ownership gaps
-- Date sensitivity
-- Risk propagation
-- Dependency validation actions
-
-The Skill deliberately uses **critical-path candidate** when evidence is suggestive rather than claiming a confirmed critical path without sufficient evidence.
+The Skill uses **critical-path candidate** when evidence is suggestive rather than claiming a confirmed critical path without sufficient evidence.
 
 **[View Skill →](skills/dependency-critical-path-intelligence/)**
 
-### 4. Decision Intelligence & Executive Briefing — Built; Validation in Progress 🔄
+### 4. Decision Intelligence & Executive Briefing — Built; validation pending
 
 **Question:** *What decision is needed, what are the trade-offs, and how should leadership see it?*
 
-Structures:
+Structures decision context, evidence, options, trade-offs, recommendations, unknowns, ownership and timing gaps, and audience-specific executive, engineering, and TPM briefings.
 
-- Decision context
-- Evidence
-- Options
-- Trade-offs
-- Recommendations
-- Unknowns
-- Decision ownership and timing
-- Leadership attention
-- Audience-specific executive / engineering / TPM briefings
-
-The underlying facts are preserved when the audience changes.
+The underlying facts should remain consistent when the audience changes.
 
 **[View Skill →](skills/decision-intelligence-executive-briefing/)**
 
-## 🧠 Portfolio Architecture
+## Quick Start
+
+1. **Choose a Skill** from the links above based on the TPM problem you want to analyze.
+2. **Review its instructions and supporting files** so you understand the intended inputs, workflow, and guardrails.
+3. **Use it in a Claude environment that supports custom Skills.** Follow the platform's current instructions to install or enable the Skill; requirements may vary by environment.
+4. **Provide a realistic, non-sensitive project update** with the relevant context, constraints, dates, dependencies, and known unknowns.
+5. **Review the output critically.** Check material claims against your input, verify assumptions, and do not treat recommendations as confirmed facts.
+6. **Capture failure cases and retest** after changing instructions.
+
+Start with the [Project Status Analyzer](skills/project-status-analyzer/) and its [evaluation test cases](skills/project-status-analyzer/evaluation/test-cases.md). See Anthropic's [Skill authoring guidance](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills) for platform-specific instructions.
+
+## Illustrative Example
+
+**Sample input**
+
+> The program targets launch in eight weeks. Six of ten applications have migrated. One remaining application needs a legacy authentication change estimated at five business days, but the estimate is not yet validated. A vendor change is expected next week under a verbal commitment. Security review has not started and normally takes seven business days. The dependency between the vendor change and security review is unknown.
+
+**What a useful analysis should surface**
+
+- **Known facts:** 6 of 10 applications migrated; target launch in eight weeks; integration estimate is unvalidated.
+- **Risks to investigate:** vendor commitment reliability, remaining integration readiness, and security-review timing.
+- **Unknowns to preserve:** whether security review can start before the vendor change and whether these activities affect the confirmed critical path.
+- **Next actions:** validate the integration estimate, confirm vendor delivery in writing, and ask Security to clarify review prerequisites and earliest start.
+
+*This is an illustrative expected response, not a recorded execution result. The Skills have not yet been validated against this example.*
+
+## Portfolio Architecture
 
 ```text
                  Unstructured Program Information
@@ -119,18 +111,18 @@ The underlying facts are preserved when the audience changes.
 
 The four Skills are intentionally complementary rather than four variations of the same prompt.
 
-## 🧪 Evaluation Approach
+## Evaluation Approach
 
-The portfolio treats **evaluation as part of AI development**.
+**Evaluation is part of AI development.** The intended cycle is:
 
 ```text
 Define TPM Problem
         ↓
 Design Skill
         ↓
-Baseline Test
+Run Baseline Test
         ↓
-Evaluate Output
+Evaluate Actual Output
         ↓
 Identify Failure Mode
         ↓
@@ -138,7 +130,7 @@ Improve Instructions
         ↓
 Retest
         ↓
-Document Result
+Document Evidence
 ```
 
 Evaluation dimensions include:
@@ -147,8 +139,8 @@ Evaluation dimensions include:
 |---|---|
 | Accuracy | Correct understanding of supplied information |
 | Evidence adherence | Conclusions remain grounded in input |
-| Hallucination control | No invented facts, owners, dates, dependencies or requirements |
-| Completeness | Material impacts, risks and unknowns are identified |
+| Hallucination control | No invented facts, owners, dates, dependencies, or requirements |
+| Completeness | Material impacts, risks, and unknowns are identified |
 | Reasoning quality | Conclusions are defensible from evidence |
 | Uncertainty | Important unknowns remain visible |
 | Actionability | Recommendations are usable by TPMs |
@@ -157,52 +149,44 @@ Evaluation dimensions include:
 
 **[View evaluation framework →](evaluation/framework.md)**
 
-## 🏢 End-to-End Case Study
+## End-to-End Case Study
 
-A synthetic **Enterprise Identity Modernization** program is used to evaluate the four Skills together.
+A synthetic **Enterprise Identity Modernization** program is used to evaluate the four Skills together. It includes 10 applications, an OpenID Connect migration, legacy authentication work, a vendor dependency, pending security review, end-to-end testing, an eight-week launch target, and material unknowns.
 
-The scenario includes:
+The scenario is synthetic and contains no proprietary company information.
 
-- 10 applications in scope
-- Identity modernization / OpenID Connect migration
-- Remaining legacy authentication integration work
-- External vendor dependency
-- Security review
-- End-to-end testing
-- 8-week launch constraint
-- Cross-team dependencies
-- Material unknowns and leadership trade-offs
+- [Program context](case-study/program-context.md)
+- [Sample program update](case-study/sample-input.md)
+- [End-to-end evaluation plan](case-study/end-to-end-analysis.md)
+- [Cross-skill validation scorecard](case-study/cross-skill-validation-scorecard.md)
 
-The case study is intentionally synthetic and contains no proprietary company information.
+## Current Status
 
-**[View program context →](case-study/program-context.md)** · **[View sample update →](case-study/sample-input.md)** · **[View end-to-end evaluation →](case-study/end-to-end-analysis.md)**
+- **Portfolio V1 structure:** Complete
+- **Core Skills:** Four built
+- **Validation:** Actual execution and consolidated review pending
+- **Case study and scorecard:** Prepared for validation; results remain pending
+- **Next:** Execute the Skills, record evidence, and improve only where testing identifies a meaningful weakness
 
-## 📌 Current Status
+“Built” describes implementation status; it does **not** mean the Skill has passed consolidated validation.
 
-**Portfolio V1 structure:** Complete  
-**Skills:** 4 core capabilities built  
-**Validation:** In progress; consolidated testing will be performed against the shared case study  
-**Next:** Refine only where testing identifies a meaningful weakness
+## Why Only Four Skills?
 
-## 🚧 Why Only Four Skills?
-
-The portfolio intentionally prioritizes **depth over quantity**.
-
-The target is to demonstrate that AI can support the TPM lifecycle from:
+The portfolio prioritizes **depth over quantity**. The goal is to support the TPM lifecycle:
 
 > **Understand → Assess → Analyze Change → Trace Dependencies → Decide → Communicate**
 
-Additional Skills will only be added if they provide materially different TPM value.
+Additional Skills will be added only if they provide materially different TPM value.
 
-## 👤 About
+## About
 
 Built as a practical **AI + Technical Program Management portfolio** exploring how AI can augment program management workflows and engineering decision support.
 
 The examples use synthetic project scenarios and do not contain proprietary company information.
 
-## 📚 Skill Authoring Reference
+## Skill Authoring Reference
 
-The Skills follow Anthropic's current custom Skill guidance: focused workflows, required `name` and `description` metadata, explicit usage guidance, examples, guardrails, and incremental testing. See the [Anthropic Skill authoring guide](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills) for the platform reference.
+The Skills follow Anthropic's custom Skill guidance: focused workflows, required `name` and `description` metadata, explicit usage guidance, examples, guardrails, and incremental testing. See the [Anthropic Skill authoring guide](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills).
 
 ## License
 
